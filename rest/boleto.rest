@@ -1,0 +1,27 @@
+http://localhost:8080/boleto
+
+--include
+--silent 
+
+Accept: application/json
+Connection: keep-alive
+Content-Type: application/json; charset=utf-8
+User-Agent: VRV
+
+GET 
+
+#GET /3
+
+#POST 
+#{
+# "capacidad": 300,
+# "piso": 100
+#}
+
+#PUT /5
+#{
+#  "capacidad": 300,
+#  "piso": 100
+#}
+
+#DELETE /6
