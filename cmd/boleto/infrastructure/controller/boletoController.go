@@ -27,7 +27,7 @@ func (this *BoletoController) Create(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if err := this.serviceContainer.Boleto.Create.Execute(boleto.IdBoleto, boleto.IdPasajero, boleto.IdViaje, boleto.IdAsiento, boleto.IdTransaccion, boleto.Fecha, boleto.SubTotal); err != nil {
+	if err := this.serviceContainer.Boleto.Create.Execute(boleto.IdBoleto, boleto.IdPasajero, boleto.IdViaje, boleto.IdAsiento, boleto.IdTransaccion, boleto.SubTotal, boleto.Fecha); err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
@@ -80,7 +80,7 @@ func (this *BoletoController) Update(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if err := this.serviceContainer.Boleto.Update.Execute(id, boleto.IdPasajero, boleto.IdViaje, boleto.IdAsiento, boleto.IdTransaccion, boleto.Fecha, boleto.SubTotal); err != nil {
+	if err := this.serviceContainer.Boleto.Update.Execute(id, boleto.IdPasajero, boleto.IdViaje, boleto.IdAsiento, boleto.IdTransaccion, boleto.SubTotal, boleto.Fecha); err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}

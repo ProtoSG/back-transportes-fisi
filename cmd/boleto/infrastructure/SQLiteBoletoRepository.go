@@ -39,7 +39,7 @@ func (this *SQLiteBoletoRepository) GetAll() ([]*domain.Boleto, error) {
 
 	for rows.Next() {
 		boleto := &domain.Boleto{}
-		rows.Scan(&boleto.IdBoleto, &boleto.IdPasajero, &boleto.IdViaje, &boleto.IdAsiento, &boleto.IdTransaccion, &boleto.Fecha, &boleto.SubTotal)
+		rows.Scan(&boleto.IdBoleto, &boleto.IdPasajero, &boleto.IdViaje, &boleto.IdAsiento, &boleto.IdTransaccion, &boleto.SubTotal, &boleto.Fecha)
 		boletos = append(boletos, boleto)
 	}
 

@@ -13,8 +13,8 @@ func NewBoletoCreate(repository repository.BoletoRepository) *BoletoCreate {
 	return &BoletoCreate{repository: repository}
 }
 
-func (b *BoletoCreate) Execute(idBoleto int, idPasajero int, idViaje int, idAsiento int, idTransaccion int, fecha int, subTotal int) error {
-	boleto := domain.NewBoleto(idBoleto, idPasajero, idViaje, idAsiento, idTransaccion, fecha, subTotal)
+func (b *BoletoCreate) Execute(idBoleto, idPasajero, idViaje, idAsiento, idTransaccion int, subTotal float32, fecha string) error {
+	boleto := domain.NewBoleto(idBoleto, idPasajero, idViaje, idAsiento, idTransaccion, subTotal, fecha)
 
 	return b.repository.Create(boleto)
 }
