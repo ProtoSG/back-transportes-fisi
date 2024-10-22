@@ -15,4 +15,5 @@ func AsientoRouter(r *mux.Router, serviceContainer *infrastructure.ServiceContai
 	r.HandleFunc("/asiento/{id}", asientoController.GetById).Methods("GET")
 	r.HandleFunc("/asiento/{id}", asientoController.Update).Methods("PUT")
 	r.HandleFunc("/asiento/{id}", asientoController.Delete).Methods("DELETE")
+	r.HandleFunc("/asiento/bus/{id}", asientoController.GetByIdBus).Methods("GET")
 }

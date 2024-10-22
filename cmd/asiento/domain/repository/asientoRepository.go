@@ -8,4 +8,5 @@ type AsientoRepository interface {
 	Create(asiento *domain.Asiento) error
 	Update(asiento *domain.Asiento) error
 	Delete(id int) error
+	GetByIdBus(id int) ([]*domain.Asiento, error)
 }

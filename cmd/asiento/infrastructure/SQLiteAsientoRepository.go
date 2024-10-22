@@ -91,3 +91,38 @@ func (this *SQLiteAsientoRepository) Delete(id int) error {
 
 	return nil
 }
+
+func (this *SQLiteAsientoRepository) GetByIdBus(id int) ([]*domain.Asiento, error) {
+	stmt, err := this.db.Prepare(`
+    SELECT 
+      a.id_asiento,
+      a.id_bus,
+      a.numero_asiento,
+      a.piso,
+      a.precio,
+      a.disponibilidad
+    FROM Asiento a
+    INNER JOIN Bus b ON a.id_bus = b.id_bus
+    WHERE b.id_bus = ?;
+  `)
+	if err != nil {
+		return nil, err
+	}
+	defer stmt.Close()
+
+	rows, err := stmt.Query(id)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+
+	var asientos []*domain.Asiento
+
+	for rows.Next() {
+		asiento := &domain.Asiento{}
+		rows.Scan(&asiento.IdAsiento, &asiento.IdBus, &asiento.NumeroAsiento, &asiento.Piso, &asiento.Precio, &asiento.Disponibilidad)
+		asientos = append(asientos, asiento)
+	}
+
+	return asientos, nil
+}
