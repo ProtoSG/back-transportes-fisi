@@ -1,4 +1,4 @@
-http://localhost:8080/asiento
+http://localhost:8080/ciudad
 
 --include
 --silent 
@@ -8,11 +8,9 @@ Connection: keep-alive
 Content-Type: application/json; charset=utf-8
 User-Agent: VRV
 
-#GET 
+GET 
 
 #GET /3
-
-GET /bus/1
 
 #POST 
 #{

@@ -1,4 +1,4 @@
-http://localhost:8080/asiento
+http://localhost:8080/servicio
 
 --include
 --silent 
@@ -10,9 +10,7 @@ User-Agent: VRV
 
 #GET 
 
-#GET /3
-
-GET /bus/1
+GET /2
 
 #POST 
 #{

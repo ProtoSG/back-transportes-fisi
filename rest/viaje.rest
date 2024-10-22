@@ -1,0 +1,33 @@
+http://localhost:8080/viaje
+
+--include
+--silent 
+
+Accept: application/json
+Connection: keep-alive
+Content-Type: application/json; charset=utf-8
+User-Agent: VRV
+
+#GET 
+
+#GET /2
+
+GET /search?origen=lima&destino=trujillo&fecha=2024-10-09
+
+#POST 
+#{
+#  "id_cliente": 3,
+#  "id_descuento": 1,
+#  "total" : 2000,
+#  "metodo_pago": "Yape",
+#  "estado": "Completado",
+#  "fecha_transaccion": "2024-09-30"
+#}
+
+#PUT /5
+#{
+#  "capacidad": 300,
+#  "piso": 100
+#}
+
+#DELETE /6
